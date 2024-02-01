@@ -1,7 +1,9 @@
 package jpabook.jpashop.domain;
 
 import jakarta.persistence.*;
+import lombok.AccessLevel;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.hibernate.validator.internal.util.stereotypes.Lazy;
 
@@ -12,10 +14,12 @@ import java.util.List;
 import static jakarta.persistence.FetchType.*;
 
 
-@Entity
+
 @Table(name = "orders")
 @Getter
 @Setter
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
+@Entity
 public class Order {
     @Id
     @GeneratedValue
