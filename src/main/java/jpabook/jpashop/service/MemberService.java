@@ -1,5 +1,6 @@
 package jpabook.jpashop.service;
 
+import jpabook.jpashop.api.MemberApiController;
 import jpabook.jpashop.domain.Member;
 import jpabook.jpashop.repository.MemberRepository;
 import lombok.AllArgsConstructor;
@@ -16,7 +17,8 @@ import java.util.List;
 @Service
 public class MemberService {
 
-    private final MemberRepository memberRepository;
+    private final MemberRepository
+            memberRepository;
 
     /**
      * 회원가입
@@ -42,8 +44,13 @@ public class MemberService {
         return memberRepository.findAll();
     }
 
-
     public Member findOne(Long memberId) {
         return memberRepository.findOne(memberId);
+    }
+    @Transactional
+
+    public void update(Long id, String name) {
+        Member member =memberRepository.findOne(id);
+        member.setName(name);
     }
 }
