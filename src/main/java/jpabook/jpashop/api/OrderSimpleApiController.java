@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.time.LocalDateTime;
 import java.util.List;
-import java.util.stream.Stream;
 
 /**
  * xToOne(ManyToOne, OneToOne) 관계 최적화
@@ -65,6 +64,5 @@ public class OrderSimpleApiController {
             address = order.getDelivery().getAddress();
         }
     }
-
 }
 
