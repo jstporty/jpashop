@@ -8,6 +8,9 @@ public class OrderItemQueryDto {
 
     @JsonIgnore
     private Long orderId;
+    private String itemName;
+    private int orderPrice;
+    private int count;
 
     public OrderItemQueryDto(Long orderId, String itemName, int orderPrice, int count) {
         this.orderId = orderId;
@@ -16,7 +19,5 @@ public class OrderItemQueryDto {
         this.count = count;
     }
 
-    private String itemName;
-    private int orderPrice;
-    private int count;
+
 }
